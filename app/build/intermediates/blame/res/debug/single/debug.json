@@ -1,0 +1,158 @@
+[
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_action_pass.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\ic_action_pass.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_color_fondo.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\color_fondo.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_look.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\look.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_redondo.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\redondo.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_action_user.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\ic_action_user.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_carga.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\dialog_carga.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_btn_tres.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\btn_tres.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_fondo.jpg.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\fondo.jpg"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_iem_list_adopccion.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\iem_list_adopccion.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_iem_list_perdidos.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\iem_list_perdidos.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_imagen.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\dialog_imagen.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_btn_transparent.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\btn_transparent.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_people.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\people.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_btn_dos.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\btn_dos.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_btn_uno.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\btn_uno.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_btn_redondo.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\btn_redondo.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_foto.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\dialog_foto.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_primer.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\activity_primer.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_list_noticias.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\item_list_noticias.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_background.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_grid_perdidos.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\item_grid_perdidos.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_publicidad.xml.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\layout\\dialog_publicidad.xml"
+    },
+    {
+        "merged": "C:\\android\\MascotasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_logo.png.flat",
+        "source": "C:\\android\\MascotasApp\\app\\src\\main\\res\\drawable-v24\\logo.png"
+    }
+]

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/color_fondo"
+    tools:context=".Activities.PrimerActivity">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnList"
+            android:drawableLeft="@drawable/look"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:background="@drawable/btn_uno"
+            android:text="Perdidos"
+            android:textColor="@drawable/btn_dos" />
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:drawableLeft="@drawable/people"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_uno"
+            android:text="Noticias"
+            android:textColor="@drawable/btn_dos" />
+
+        <Button
+            android:id="@+id/btnAdopccion"
+            android:drawableLeft="@drawable/look"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_uno"
+            android:text="Adopcción"
+            android:textColor="@drawable/btn_dos" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/btn_logout"
+        />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/btn_tres"
+        android:background="@drawable/btn_uno"
+        android:fontFamily="sans-serif-black"
+        android:text="Logout"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        />
+    <Button
+        android:id="@+id/btn_regresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/btn_tres"
+        android:background="@drawable/btn_uno"
+        android:fontFamily="sans-serif-black"
+        android:text="Salir sección perdidos"
+        android:textSize="15sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        />
+    <Button
+        android:id="@+id/btn_regresar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/btn_tres"
+        android:background="@drawable/btn_uno"
+        android:fontFamily="sans-serif-black"
+        android:text="Salir sección adopcción"
+        android:textSize="15sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        />
+    <Button
+        android:id="@+id/btn_noNoticias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/btn_tres"
+        android:background="@drawable/btn_uno"
+        android:fontFamily="sans-serif-black"
+        android:text="Salir"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        />
+
+
+</RelativeLayout>

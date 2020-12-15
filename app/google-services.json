@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "553629584029",
+    "firebase_url": "https://mascotasdelrincon.firebaseio.com",
+    "project_id": "mascotasdelrincon",
+    "storage_bucket": "mascotasdelrincon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553629584029:android:5f037349f7a42055a3e274",
+        "android_client_info": {
+          "package_name": "mx.com.systemjorge.lostpetsdelrincon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553629584029-hosfj2eg8p85cfj3p3s9nvb3j76gqe6t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.com.systemjorge.lostpetsdelrincon",
+            "certificate_hash": "01feb3928b403caaa1f603b1089ba1c012fc08a8"
+          }
+        },
+        {
+          "client_id": "553629584029-68updgubedbh4gqpcannkkku1cscjopj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf1BiZ7OXgoUN5wod2EpTG_P_o8jRBJjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553629584029-68updgubedbh4gqpcannkkku1cscjopj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

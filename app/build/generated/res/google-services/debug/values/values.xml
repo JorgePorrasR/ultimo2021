@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">553629584029-68updgubedbh4gqpcannkkku1cscjopj.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://mascotasdelrincon.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">553629584029</string>
+    <string name="google_api_key" translatable="false">AIzaSyDf1BiZ7OXgoUN5wod2EpTG_P_o8jRBJjY</string>
+    <string name="google_app_id" translatable="false">1:553629584029:android:5f037349f7a42055a3e274</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDf1BiZ7OXgoUN5wod2EpTG_P_o8jRBJjY</string>
+    <string name="google_storage_bucket" translatable="false">mascotasdelrincon.appspot.com</string>
+    <string name="project_id" translatable="false">mascotasdelrincon</string>
+</resources>
