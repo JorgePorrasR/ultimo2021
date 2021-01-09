@@ -3,10 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/linearPets"
     android:layout_height="match_parent"
     android:background="@drawable/color_fondo"
     tools:context=".Activities.PrimerActivity">
+    <androidx.appcompat.widget.Toolbar
 
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="2dp"
+        android:gravity="right">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
+                android:layout_gravity="left"
+                app:srcCompat="@drawable/logo" />
+        <TextView
+            android:id="@+id/Titulo"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:textSize="30dp"
+            android:textColor="@drawable/btn_dos"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            />
+        <Button
+            android:id="@+id/btn_regresar"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="55dp"
+            android:layout_gravity="right"
+            android:layout_height="19dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_uno"
+            android:text="Salir" />
+
+
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
@@ -15,7 +54,7 @@
 
         <Button
             android:id="@+id/btnList"
-            android:drawableLeft="@drawable/look"
+            android:drawableLeft="@drawable/look2"
             android:layout_width="wrap_content"
             android:layout_height="26dp"
             android:layout_marginLeft="7dp"
@@ -37,6 +76,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="7dp"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:background="@drawable/btn_uno"
             android:text="Noticias"
             android:textColor="@drawable/btn_dos" />
@@ -45,6 +85,7 @@
             android:id="@+id/btnAdopccion"
             android:drawableLeft="@drawable/look"
             android:fontFamily="sans-serif-black"
+            android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
             android:layout_marginLeft="7dp"
@@ -57,14 +98,21 @@
 
 
     </LinearLayout>
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="270dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        app:srcCompat="@drawable/logo" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerExample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linear"
         android:layout_marginTop="20dp"
-        android:layout_above="@+id/btn_logout"
+        android:layout_marginBottom="0dp"
+
         />
 
     <Button
@@ -74,46 +122,10 @@
         android:textColor="@drawable/btn_tres"
         android:background="@drawable/btn_uno"
         android:fontFamily="sans-serif-black"
-        android:text="Logout"
+        android:text="Cerrar Sesión"
         android:textSize="18sp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="50dp"
-        />
-    <Button
-        android:id="@+id/btn_regresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@drawable/btn_tres"
-        android:background="@drawable/btn_uno"
-        android:fontFamily="sans-serif-black"
-        android:text="Salir sección perdidos"
-        android:textSize="15sp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="50dp"
-        />
-    <Button
-        android:id="@+id/btn_regresar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@drawable/btn_tres"
-        android:background="@drawable/btn_uno"
-        android:fontFamily="sans-serif-black"
-        android:text="Salir sección adopcción"
-        android:textSize="15sp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="50dp"
-        />
-    <Button
-        android:id="@+id/btn_noNoticias"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@drawable/btn_tres"
-        android:background="@drawable/btn_uno"
-        android:fontFamily="sans-serif-black"
-        android:text="Salir"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="50dp"
+        android:layout_margin="30dp"
         />
 
 

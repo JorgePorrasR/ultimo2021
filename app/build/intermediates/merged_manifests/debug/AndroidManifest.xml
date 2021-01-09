@@ -20,12 +20,14 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="PetsDelRincón"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        <activity android:name="mx.com.systemjorge.mascotasapp.Activities.PrimerActivity" />
+        <activity
+            android:name="mx.com.systemjorge.mascotasapp.Activities.PrimerActivity"
+            android:label="" >
+        </activity>
         <activity android:name="mx.com.systemjorge.mascotasapp.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,11 +35,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="mx.com.systemjorge.mascotasapp.MyFirebaseMessagingService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name="mx.com.systemjorge.mascotasapp.MainActivity"
-            android:label="@string/app_name"
+            android:label=""
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <!--
+             FirebaseMessagingService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
@@ -108,17 +128,6 @@
                 <action android:name="com.google.firebase.auth.api.gms.service.START" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
-        <!--
-             FirebaseMessagingService performs security checks at runtime,
-             no need for explicit permissions despite exported="true"
-        -->
-        <service
-            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-            android:exported="true" >
-            <intent-filter android:priority="-500" >
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 

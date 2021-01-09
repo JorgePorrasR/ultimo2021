@@ -2,66 +2,95 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/transparent"
     android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
+        android:background="@drawable/redondo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="12dp">
+        android:layout_marginStart="0dp"
+
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
-
             android:padding="10dp"
-            android:background="@drawable/redondo"
+            android:background="@drawable/redondo2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/idImagen"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:src="@mipmap/ic_launcher" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:textAlignment="center"
+                android:gravity="center"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/idNombre"
+                    android:textAlignment="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre"
-                    android:fontFamily="cursive"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="35sp"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/colorPrimarys"
+                    android:textSize="33sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/idInfo"
+                    android:justificationMode="inter_word"
+                    android:textAlignment="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textSize="17sp"
                     android:text="descripcción"
-                    android:textColor="@color/colorPrimary2" />
+                    android:textColor="@color/colorPrimarys" />
+                <LinearLayout
+
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                <ImageView
+                        android:id="@+id/idImagen"
+                        android:layout_width="94dp"
+                        android:layout_height="94dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@mipmap/ic_launcher" />
+                    <TextView
+                        android:id="@+id/idVer"
+                        android:background="@drawable/redondo3"
+                        android:justificationMode="inter_word"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="17sp"
+                        android:layout_above="@+id/idImagen"
+                        android:text="Ver Foto"
+                        android:textColor="@color/colorPrimary2" />
+                </LinearLayout>
+
 
             </LinearLayout>
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

@@ -2,12 +2,16 @@ package mx.com.systemjorge.mascotasapp;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText txtEmail, txtPassword;
     private Button btnLogin;
-
+    private ImageView imageView;
     private FirebaseAuth mAuth;
 
     //Elementos para la animación de carga
@@ -36,8 +40,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         setContentView(R.layout.activity_login);
-
+        imageView = (ImageView) findViewById(R.id.imageView);
         txtEmail = findViewById(R.id.User);
         txtPassword = findViewById(R.id.Pass);
         btnLogin = findViewById(R.id.btnLogin);
@@ -47,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 login();
             }
         });
-
+        rotarImagen(imageView);
         mAuth = FirebaseAuth.getInstance();
 
         mDialogLoading = new Dialog(this);
@@ -56,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         mDialogLoading.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
     } // <!-- FIN DEL MÉTODO onCreate --> //
+
 
     @Override
     protected void onStart() {
@@ -67,7 +74,15 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    private void rotarImagen(View view){
+        RotateAnimation animation = new RotateAnimation(0, 25,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 
+        animation.setDuration(2000);
+        animation.setRepeatCount(Animation.INFINITE);
+        animation.setRepeatMode(Animation.REVERSE);
+        view.startAnimation(animation);}
     private void login() {
         String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();

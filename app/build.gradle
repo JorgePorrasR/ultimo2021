@@ -28,6 +28,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
     testImplementation 'junit:junit:4.12'
     implementation 'com.airbnb.android:lottie:3.4.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -41,7 +43,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.0'
 
     //Firebase messaging
-    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    //implementation 'com.google.firebase:firebase-messaging:17.3.4'
 
     //Agregar imagenes con Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'

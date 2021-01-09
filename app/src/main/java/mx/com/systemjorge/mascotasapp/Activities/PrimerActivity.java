@@ -1,20 +1,31 @@
 package mx.com.systemjorge.mascotasapp.Activities;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.icu.text.CaseMap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,142 +40,162 @@ import java.util.List;
 
 
 import mx.com.systemjorge.mascotasapp.Adapters.RecyclerAdapter;
+import mx.com.systemjorge.mascotasapp.Adapters.RecyclerLugares;
 import mx.com.systemjorge.mascotasapp.Adapters.RecyclerNoticias;
+import mx.com.systemjorge.mascotasapp.FechaVo;
 import mx.com.systemjorge.mascotasapp.LoginActivity;
 import mx.com.systemjorge.mascotasapp.NoticiasVo;
 import mx.com.systemjorge.mascotasapp.PerdidoVo;
 import mx.com.systemjorge.mascotasapp.Providers.AuthProvider;
+import mx.com.systemjorge.mascotasapp.Providers.FechasProvider;
 import mx.com.systemjorge.mascotasapp.Providers.NoticiasProvider;
 import mx.com.systemjorge.mascotasapp.Providers.PerritosProvider;
 import mx.com.systemjorge.mascotasapp.Providers.PubliProvider;
 import mx.com.systemjorge.mascotasapp.R;
+import mx.com.systemjorge.mascotasapp.cargaActivity;
 
+import androidx.appcompat.widget.Toolbar;
 
 public class PrimerActivity extends AppCompatActivity {
 
-    private Button btn1, btn2, btn3, btnLogout, btn4, btn5, btn6;
+    private Button btnPerdidos, btnNoticias, btnAdopcion, btnLogout, btn4;
+    private int action;
     //Comentario chido
     //Providers
     private PerritosProvider mPerritosProvider;
     private NoticiasProvider mNoticiasProvider;
+    private FechasProvider mFechasProvider;
     private AuthProvider mAuthProvider;
     private PubliProvider mPubliProvider;
 
 
-
     private Dialog publicidad;
+    private Dialog carga;
     private ImageView publicidad2;
     private Button close;
     private PerdidoVo model;
     private NoticiasVo model2;
+    private FechaVo model3;
+    private List<FechaVo> modelList3 = new ArrayList<>();
     private List<PerdidoVo> modelList = new ArrayList<>();
     private List<NoticiasVo> modelList2 = new ArrayList<>();
-
+    private TextView titulo;
     private RecyclerView mRecycler;
     private RecyclerAdapter mAdapter;
-
+    private ImageView logo;
     private RecyclerView mRecycler2;
     private RecyclerNoticias mAdapter2;
+    private RelativeLayout ll;
+    private RecyclerView mRecycler3;
+    private RecyclerLugares mAdapter3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primer);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+        btnPerdidos = findViewById(R.id.btnList);
+        ll = findViewById(R.id.linearPets);
+        ll.setBackgroundResource(R.drawable.color_fondo);
+        logo = findViewById(R.id.imageView);
+        btnNoticias = findViewById(R.id.btnMenu);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        btn1 = findViewById(R.id.btnList);
-        btn2 = findViewById(R.id.btnMenu);
-        btn3 = findViewById(R.id.btnAdopccion);
+        titulo = findViewById(R.id.Titulo);
+        btnAdopcion = findViewById(R.id.btnAdopccion);
         btn4 = findViewById(R.id.btn_regresar);
-        btn5 = findViewById(R.id.btn_noNoticias);
-        btn6 = findViewById(R.id.btn_regresar2);
         btnLogout = findViewById(R.id.btn_logout);
+        carga = new Dialog(this);
+        carga.setContentView(R.layout.dialog_carga2);
         btn4.setVisibility(View.INVISIBLE);
-        btn6.setVisibility(View.INVISIBLE);
-        btn5.setVisibility(View.INVISIBLE);
-        btn1.setOnClickListener(new View.OnClickListener() {
+        toolbar.setVisibility(View.INVISIBLE);
+        btnPerdidos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                list1();
-                btn1.setVisibility(View.INVISIBLE);
-                btn2.setVisibility(View.INVISIBLE);
-                btn3.setVisibility(View.INVISIBLE);
-                btn6.setVisibility(View.INVISIBLE);
-                btn5.setVisibility(View.INVISIBLE);
+
+                    list1();
+                action = 1;
+                ll.setBackgroundResource(R.drawable.color_fondo2);
+                logo.setVisibility(View.INVISIBLE);
+                toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                toolbar.setVisibility(View.VISIBLE);
+                btnNoticias.setVisibility(View.INVISIBLE);
+                btnPerdidos.setVisibility(View.INVISIBLE);
+                btnAdopcion.setVisibility(View.INVISIBLE);
                 btnLogout.setVisibility(View.INVISIBLE);
                 btn4.setVisibility(View.VISIBLE);
+                titulo.setText("Perdidos");
             }
 
         });
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                list1();
-            }
-        });
 
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                borrarDatos2();
-                btn1.setVisibility(View.VISIBLE);
-                btn5.setVisibility(View.INVISIBLE);
-                btn2.setVisibility(View.VISIBLE);
-                btn6.setVisibility(View.INVISIBLE);
-                btn3.setVisibility(View.VISIBLE);
-                btnLogout.setVisibility(View.VISIBLE);
-                btn4.setVisibility(View.INVISIBLE);
 
-            }
-        });
 
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btnNoticias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listNoticias();
-                btn1.setVisibility(View.INVISIBLE);
-                btn2.setVisibility(View.INVISIBLE);
-                btn3.setVisibility(View.INVISIBLE);
+                action = 2;
+                toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                ll.setBackgroundResource(R.drawable.color_fondo2);
+                btn4.setVisibility(View.VISIBLE);
+                logo.setVisibility(View.INVISIBLE);
+                toolbar.setVisibility(View.VISIBLE);
+                btnPerdidos.setVisibility(View.INVISIBLE);
+                btnNoticias.setVisibility(View.INVISIBLE);
+                btnAdopcion.setVisibility(View.INVISIBLE);
                 btnLogout.setVisibility(View.INVISIBLE);
-                btn4.setVisibility(View.INVISIBLE);
-                btn6.setVisibility(View.INVISIBLE);
-                btn5.setVisibility(View.VISIBLE);
+                titulo.setText("Noticias");
+
                 //Toast.makeText(PrimerActivity.this, "Lista 2", Toast.LENGTH_SHORT).show();
             }
         });
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { borrarDatos3();
-            btn1.setVisibility(View.VISIBLE);
-            btn2.setVisibility(View.VISIBLE);
-            btn3.setVisibility(View.VISIBLE);
-            btnLogout.setVisibility(View.VISIBLE);
-            btn6.setVisibility(View.INVISIBLE);
-            btn5.setVisibility(View.INVISIBLE);
-            }});
 
-        btn3.setOnClickListener(new View.OnClickListener() {
+        btnAdopcion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { list2();
-                btn1.setVisibility(View.INVISIBLE);
-                btn2.setVisibility(View.INVISIBLE);
-                btn3.setVisibility(View.INVISIBLE);
-                btn6.setVisibility(View.VISIBLE);
+                action = 1;
+                ll.setBackgroundResource(R.drawable.color_fondo2);
+                toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                logo.setVisibility(View.INVISIBLE);
+                toolbar.setVisibility(View.VISIBLE);
+                btn4.setVisibility(View.VISIBLE);
+                btnPerdidos.setVisibility(View.INVISIBLE);
+                btnNoticias.setVisibility(View.INVISIBLE);
+                btnAdopcion.setVisibility(View.INVISIBLE);
                 btnLogout.setVisibility(View.INVISIBLE);
-                btn5.setVisibility(View.INVISIBLE);
+                titulo.setText("Adopción");
                 //Toast.makeText(PrimerActivity.this, "Lista 3", Toast.LENGTH_SHORT).show();
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                borrarDatos();
-                btn6.setVisibility(View.INVISIBLE);
-                btn1.setVisibility(View.VISIBLE);
-                btn5.setVisibility(View.INVISIBLE);
-                btn2.setVisibility(View.VISIBLE);
-                btn3.setVisibility(View.VISIBLE);
-                btnLogout.setVisibility(View.VISIBLE);
-                btn4.setVisibility(View.INVISIBLE);
+                if(action == 1) {
+                    borrarDatos();
+                    ll.setBackgroundResource(R.drawable.color_fondo);
+                    logo.setVisibility(View.VISIBLE);
+                    toolbar.setVisibility(View.INVISIBLE);
+                    btnPerdidos.setVisibility(View.VISIBLE);
+                    btnNoticias.setVisibility(View.VISIBLE);
+                    btnAdopcion.setVisibility(View.VISIBLE);
+                    btnLogout.setVisibility(View.VISIBLE);
+                    btn4.setVisibility(View.INVISIBLE);
+                }
+                if(action == 2){
+                    borrarDatos2();
+                    ll.setBackgroundResource(R.drawable.color_fondo);
+                    logo.setVisibility(View.VISIBLE);
+                    toolbar.setVisibility(View.INVISIBLE);
+                    btnPerdidos.setVisibility(View.VISIBLE);
+                    btnNoticias.setVisibility(View.VISIBLE);
+                    btnAdopcion.setVisibility(View.VISIBLE);
+                    btnLogout.setVisibility(View.VISIBLE);
+                    btn4.setVisibility(View.INVISIBLE);
+                }
+
             }
         });
 
@@ -191,7 +222,25 @@ public class PrimerActivity extends AppCompatActivity {
 
     } // -- FIN DEL MÉTODO onCreate -- //
 
+    @Override
+    protected void onPause() {
+        super.onPause();
 
+        if (publicidad.isShowing()) {
+            publicidad.cancel();
+        }
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (publicidad.isShowing()) {
+            publicidad.cancel();
+        }
+
+    }
 
     protected void onStart() {
         super.onStart();
@@ -203,6 +252,8 @@ public class PrimerActivity extends AppCompatActivity {
         publicidad.setCancelable(false);
         publicidad.setCanceledOnTouchOutside(false);
         publicidad2 = publicidad.findViewById(R.id.ImagePubli);
+        carga = new Dialog(this);
+        carga.setContentView(R.layout.dialog_carga2);
         close = publicidad.findViewById(R.id.closepubli);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -282,7 +333,15 @@ public class PrimerActivity extends AppCompatActivity {
         publicidad.show();
 
     }
+    private void rotarImagen(View view){
+        RotateAnimation animation = new RotateAnimation(0, 25,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 
+        animation.setDuration(2000);
+        animation.setRepeatCount(Animation.INFINITE);
+        animation.setRepeatMode(Animation.REVERSE);
+        view.startAnimation(animation);}
     private void logout() {
         mAuthProvider.logout(); // Cerrramos sesión
         Intent intent = new Intent(PrimerActivity.this, LoginActivity.class);
@@ -343,6 +402,27 @@ public class PrimerActivity extends AppCompatActivity {
             }
         });
     }
+    private void getLugares() {
+        mFechasProvider.getLugares().child("lugares").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
+                        model3 = dataSnapshot1.getValue(FechaVo.class);
+                        modelList3.add(model3);
+                    }
+                    //Cuando el Foreach haya terminado de pasar la información, llenaremos el recycler.
+                    displayFechas(modelList3);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("SMM_DEBUG", "Error: " + error.getMessage());
+            }
+        });
+    }
+
     private void getNoticias() {
         mNoticiasProvider.getNoticias().child("noticias").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -402,5 +482,9 @@ public class PrimerActivity extends AppCompatActivity {
     private void displayNoticias(List<NoticiasVo> modelList2) {
         mAdapter2 = new RecyclerNoticias(this, modelList2);
         mRecycler2.setAdapter(mAdapter2);
+    }
+    private void displayFechas(List<FechaVo> modelList3) {
+        mAdapter3 = new RecyclerLugares(this, modelList3);
+        mRecycler3.setAdapter(mAdapter3);
     }
 }
