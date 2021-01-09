@@ -42,11 +42,16 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:20.0.0'
 
-    //Firebase messaging
-    //implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    //Dependencias de Firebase Messaging (Notificaciones push)
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
 
     //Agregar imagenes con Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Retrofit y su libreria para parsear
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.1'
 
 }
 apply plugin: 'com.google.gms.google-services'

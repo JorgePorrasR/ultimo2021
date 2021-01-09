@@ -52,7 +52,6 @@ import mx.com.systemjorge.mascotasapp.Providers.NoticiasProvider;
 import mx.com.systemjorge.mascotasapp.Providers.PerritosProvider;
 import mx.com.systemjorge.mascotasapp.Providers.PubliProvider;
 import mx.com.systemjorge.mascotasapp.R;
-import mx.com.systemjorge.mascotasapp.cargaActivity;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -108,7 +107,7 @@ public class PrimerActivity extends AppCompatActivity {
         btn4 = findViewById(R.id.btn_regresar);
         btnLogout = findViewById(R.id.btn_logout);
         carga = new Dialog(this);
-        carga.setContentView(R.layout.dialog_carga2);
+        //carga.setContentView(R.layout.dialog_carga2);
         btn4.setVisibility(View.INVISIBLE);
         toolbar.setVisibility(View.INVISIBLE);
         btnPerdidos.setOnClickListener(new View.OnClickListener() {
@@ -117,9 +116,9 @@ public class PrimerActivity extends AppCompatActivity {
 
                     list1();
                 action = 1;
-                ll.setBackgroundResource(R.drawable.color_fondo2);
+                //ll.setBackgroundResource(R.drawable.color_fondo2);
                 logo.setVisibility(View.INVISIBLE);
-                toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                //toolbar.setBackgroundResource(R.drawable.color_fondo3);
                 toolbar.setVisibility(View.VISIBLE);
                 btnNoticias.setVisibility(View.INVISIBLE);
                 btnPerdidos.setVisibility(View.INVISIBLE);
@@ -138,8 +137,8 @@ public class PrimerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 listNoticias();
                 action = 2;
-                toolbar.setBackgroundResource(R.drawable.color_fondo3);
-                ll.setBackgroundResource(R.drawable.color_fondo2);
+                //toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                //ll.setBackgroundResource(R.drawable.color_fondo2);
                 btn4.setVisibility(View.VISIBLE);
                 logo.setVisibility(View.INVISIBLE);
                 toolbar.setVisibility(View.VISIBLE);
@@ -157,8 +156,8 @@ public class PrimerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) { list2();
                 action = 1;
-                ll.setBackgroundResource(R.drawable.color_fondo2);
-                toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                //ll.setBackgroundResource(R.drawable.color_fondo2);
+                //toolbar.setBackgroundResource(R.drawable.color_fondo3);
                 logo.setVisibility(View.INVISIBLE);
                 toolbar.setVisibility(View.VISIBLE);
                 btn4.setVisibility(View.VISIBLE);
@@ -253,7 +252,7 @@ public class PrimerActivity extends AppCompatActivity {
         publicidad.setCanceledOnTouchOutside(false);
         publicidad2 = publicidad.findViewById(R.id.ImagePubli);
         carga = new Dialog(this);
-        carga.setContentView(R.layout.dialog_carga2);
+        //carga.setContentView(R.layout.dialog_carga2);
         close = publicidad.findViewById(R.id.closepubli);
         close.setOnClickListener(new View.OnClickListener() {
             @Override

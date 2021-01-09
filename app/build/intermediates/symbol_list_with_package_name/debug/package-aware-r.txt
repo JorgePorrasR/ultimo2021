@@ -1,4 +1,4 @@
-mx.com.systemjorge.lostpetsdelrincon
+mx.com.systemjorge.mascotasapp
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1134,6 +1134,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1576,14 +1577,11 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable btn_redondo
-drawable btn_redondo2
 drawable btn_transparent
 drawable btn_tres
 drawable btn_uno
+drawable buttom_background
 drawable color_fondo
-drawable color_fondo2
-drawable color_fondo3
-drawable color_fondo4
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1622,7 +1620,6 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable logo
 drawable look
-drawable look2
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1654,8 +1651,6 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable people
 drawable redondo
-drawable redondo2
-drawable redondo3
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1665,7 +1660,6 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id ImagePubli
-id Imagen7
 id META
 id NO_DEBUG
 id Pass
@@ -2156,7 +2150,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_carga
-layout dialog_carga2
 layout dialog_foto
 layout dialog_imagen
 layout dialog_publicidad

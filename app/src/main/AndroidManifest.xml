@@ -9,10 +9,21 @@
     <application
 
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        
+        <service android:name=".services.MyFirebaseMessagingClient">
+
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+
+        </service>
+        
         <activity android:name=".Activities.PrimerActivity"
             android:label="">
 
@@ -25,15 +36,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".MyFirebaseMessagingService"><intent-filter>
-            <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
-        </intent-filter></service>
-
 
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
 
     </application>
