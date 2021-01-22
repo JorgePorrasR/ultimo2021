@@ -52,10 +52,13 @@ import mx.com.systemjorge.mascotasapp.Providers.NoticiasProvider;
 import mx.com.systemjorge.mascotasapp.Providers.PerritosProvider;
 import mx.com.systemjorge.mascotasapp.Providers.PubliProvider;
 import mx.com.systemjorge.mascotasapp.R;
+import mx.com.systemjorge.mascotasapp.utils.UtilsNetwork;
 
 import androidx.appcompat.widget.Toolbar;
 
 public class PrimerActivity extends AppCompatActivity {
+
+    private Boolean mInternet = false;
 
     private Button btnPerdidos, btnNoticias, btnAdopcion, btnLogout, btn4;
     private int action;
@@ -113,19 +116,22 @@ public class PrimerActivity extends AppCompatActivity {
         btnPerdidos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (mInternet) {
                     list1();
-                action = 1;
-                //ll.setBackgroundResource(R.drawable.color_fondo2);
-                logo.setVisibility(View.INVISIBLE);
-                //toolbar.setBackgroundResource(R.drawable.color_fondo3);
-                toolbar.setVisibility(View.VISIBLE);
-                btnNoticias.setVisibility(View.INVISIBLE);
-                btnPerdidos.setVisibility(View.INVISIBLE);
-                btnAdopcion.setVisibility(View.INVISIBLE);
-                btnLogout.setVisibility(View.INVISIBLE);
-                btn4.setVisibility(View.VISIBLE);
-                titulo.setText("Perdidos");
+                    action = 1;
+                    //ll.setBackgroundResource(R.drawable.color_fondo2);
+                    logo.setVisibility(View.INVISIBLE);
+                    //toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                    toolbar.setVisibility(View.VISIBLE);
+                    btnNoticias.setVisibility(View.INVISIBLE);
+                    btnPerdidos.setVisibility(View.INVISIBLE);
+                    btnAdopcion.setVisibility(View.INVISIBLE);
+                    btnLogout.setVisibility(View.INVISIBLE);
+                    btn4.setVisibility(View.VISIBLE);
+                    titulo.setText("Perdidos");
+                } else {
+                    Toast.makeText(PrimerActivity.this, "Asegúrate de tener una conexión a internet", Toast.LENGTH_SHORT).show();
+                }
             }
 
         });
@@ -135,18 +141,22 @@ public class PrimerActivity extends AppCompatActivity {
         btnNoticias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listNoticias();
-                action = 2;
-                //toolbar.setBackgroundResource(R.drawable.color_fondo3);
-                //ll.setBackgroundResource(R.drawable.color_fondo2);
-                btn4.setVisibility(View.VISIBLE);
-                logo.setVisibility(View.INVISIBLE);
-                toolbar.setVisibility(View.VISIBLE);
-                btnPerdidos.setVisibility(View.INVISIBLE);
-                btnNoticias.setVisibility(View.INVISIBLE);
-                btnAdopcion.setVisibility(View.INVISIBLE);
-                btnLogout.setVisibility(View.INVISIBLE);
-                titulo.setText("Noticias");
+                if (mInternet) {
+                    listNoticias();
+                    action = 2;
+                    //toolbar.setBackgroundResource(R.drawable.color_fondo3);
+                    //ll.setBackgroundResource(R.drawable.color_fondo2);
+                    btn4.setVisibility(View.VISIBLE);
+                    logo.setVisibility(View.INVISIBLE);
+                    toolbar.setVisibility(View.VISIBLE);
+                    btnPerdidos.setVisibility(View.INVISIBLE);
+                    btnNoticias.setVisibility(View.INVISIBLE);
+                    btnAdopcion.setVisibility(View.INVISIBLE);
+                    btnLogout.setVisibility(View.INVISIBLE);
+                    titulo.setText("Noticias");
+                } else {
+                    Toast.makeText(PrimerActivity.this, "Asegúrate de tener una conexión a internet", Toast.LENGTH_SHORT).show();
+                }
 
                 //Toast.makeText(PrimerActivity.this, "Lista 2", Toast.LENGTH_SHORT).show();
             }
@@ -155,6 +165,7 @@ public class PrimerActivity extends AppCompatActivity {
         btnAdopcion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { list2();
+            if (mInternet) {
                 action = 1;
                 //ll.setBackgroundResource(R.drawable.color_fondo2);
                 //toolbar.setBackgroundResource(R.drawable.color_fondo3);
@@ -167,41 +178,51 @@ public class PrimerActivity extends AppCompatActivity {
                 btnLogout.setVisibility(View.INVISIBLE);
                 titulo.setText("Adopción");
                 //Toast.makeText(PrimerActivity.this, "Lista 3", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(PrimerActivity.this, "Asegúrate de tener una conexión a internet", Toast.LENGTH_SHORT).show();
+            }
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(action == 1) {
-                    borrarDatos();
-                    ll.setBackgroundResource(R.drawable.color_fondo);
-                    logo.setVisibility(View.VISIBLE);
-                    toolbar.setVisibility(View.INVISIBLE);
-                    btnPerdidos.setVisibility(View.VISIBLE);
-                    btnNoticias.setVisibility(View.VISIBLE);
-                    btnAdopcion.setVisibility(View.VISIBLE);
-                    btnLogout.setVisibility(View.VISIBLE);
-                    btn4.setVisibility(View.INVISIBLE);
+                if (mInternet) {
+                    if(action == 1) {
+                        borrarDatos();
+                        ll.setBackgroundResource(R.drawable.color_fondo);
+                        logo.setVisibility(View.VISIBLE);
+                        toolbar.setVisibility(View.INVISIBLE);
+                        btnPerdidos.setVisibility(View.VISIBLE);
+                        btnNoticias.setVisibility(View.VISIBLE);
+                        btnAdopcion.setVisibility(View.VISIBLE);
+                        btnLogout.setVisibility(View.VISIBLE);
+                        btn4.setVisibility(View.INVISIBLE);
+                    }
+                    if(action == 2){
+                        borrarDatos2();
+                        ll.setBackgroundResource(R.drawable.color_fondo);
+                        logo.setVisibility(View.VISIBLE);
+                        toolbar.setVisibility(View.INVISIBLE);
+                        btnPerdidos.setVisibility(View.VISIBLE);
+                        btnNoticias.setVisibility(View.VISIBLE);
+                        btnAdopcion.setVisibility(View.VISIBLE);
+                        btnLogout.setVisibility(View.VISIBLE);
+                        btn4.setVisibility(View.INVISIBLE);
+                    }
+                } else {
+                    Toast.makeText(PrimerActivity.this, "Asegúrate de tener una conexión a internet", Toast.LENGTH_SHORT).show();
                 }
-                if(action == 2){
-                    borrarDatos2();
-                    ll.setBackgroundResource(R.drawable.color_fondo);
-                    logo.setVisibility(View.VISIBLE);
-                    toolbar.setVisibility(View.INVISIBLE);
-                    btnPerdidos.setVisibility(View.VISIBLE);
-                    btnNoticias.setVisibility(View.VISIBLE);
-                    btnAdopcion.setVisibility(View.VISIBLE);
-                    btnLogout.setVisibility(View.VISIBLE);
-                    btn4.setVisibility(View.INVISIBLE);
-                }
-
             }
         });
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logout();
+                if (mInternet) {
+                    logout();
+                } else {
+                    Toast.makeText(PrimerActivity.this, "Asegúrate de tener una conexión a internet", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -229,7 +250,16 @@ public class PrimerActivity extends AppCompatActivity {
             publicidad.cancel();
         }
 
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (UtilsNetwork.isOnline(getApplicationContext())) {
+            mInternet = true;
+        } else {
+            mInternet = false;
+        }
     }
 
     @Override
@@ -244,76 +274,80 @@ public class PrimerActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        mPubliProvider = new PubliProvider();
+        if (UtilsNetwork.isOnline(getApplicationContext())) { // Si si hay conexión internet...
+            mInternet = true;
+            mPubliProvider = new PubliProvider();
 
-        publicidad = new Dialog(this);
-        publicidad.setContentView(R.layout.dialog_publicidad);
-        publicidad.setCancelable(false);
-        publicidad.setCanceledOnTouchOutside(false);
-        publicidad2 = publicidad.findViewById(R.id.ImagePubli);
-        carga = new Dialog(this);
-        //carga.setContentView(R.layout.dialog_carga2);
-        close = publicidad.findViewById(R.id.closepubli);
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                publicidad.dismiss();
-            }
-        });
-        publicidad.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            publicidad = new Dialog(this);
+            publicidad.setContentView(R.layout.dialog_publicidad);
+            publicidad.setCancelable(false);
+            publicidad.setCanceledOnTouchOutside(false);
+            publicidad2 = publicidad.findViewById(R.id.ImagePubli);
+            carga = new Dialog(this);
+            //carga.setContentView(R.layout.dialog_carga2);
+            close = publicidad.findViewById(R.id.closepubli);
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    publicidad.dismiss();
+                }
+            });
+            publicidad.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        //aderir un escuchador de evento por una unica ocacion
-        mPubliProvider.getImagenes().addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //de la inf que obtuvo se validara si snapshot exite
-                if(snapshot.exists()){
-                    String imagen;
-                    int mNumber = (int) (Math.random() * 6) + 1;
-                    switch (mNumber){
-                        case 1:
+            //aderir un escuchador de evento por una unica ocacion
+            mPubliProvider.getImagenes().addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    //de la inf que obtuvo se validara si snapshot exite
+                    if(snapshot.exists()){
+                        String imagen;
+                        int mNumber = (int) (Math.random() * 6) + 1;
+                        switch (mNumber){
+                            case 1:
 
-                            imagen = snapshot.child("imagen1").getValue().toString();
-                            setPublicidad(imagen);
+                                imagen = snapshot.child("imagen1").getValue().toString();
+                                setPublicidad(imagen);
 
-                            break;
-                        case 2:
-                            imagen = snapshot.child("imagen2").getValue().toString();
-                            setPublicidad(imagen);
-                            break;
-                        case 3:
-                            imagen = snapshot.child("imagen3").getValue().toString();
-                            setPublicidad(imagen);
-                            break;
+                                break;
+                            case 2:
+                                imagen = snapshot.child("imagen2").getValue().toString();
+                                setPublicidad(imagen);
+                                break;
+                            case 3:
+                                imagen = snapshot.child("imagen3").getValue().toString();
+                                setPublicidad(imagen);
+                                break;
 
-                        case 4:
-                            imagen = snapshot.child("imagen4").getValue().toString();
-                            setPublicidad(imagen);
-                            break;
-                        case 5:
-                            imagen = snapshot.child("imagen5").getValue().toString();
-                            setPublicidad(imagen);
-                            break;
-                        case 6:
-                            imagen = snapshot.child("imagen6").getValue().toString();
-                            setPublicidad(imagen);
-                            break;
+                            case 4:
+                                imagen = snapshot.child("imagen4").getValue().toString();
+                                setPublicidad(imagen);
+                                break;
+                            case 5:
+                                imagen = snapshot.child("imagen5").getValue().toString();
+                                setPublicidad(imagen);
+                                break;
+                            case 6:
+                                imagen = snapshot.child("imagen6").getValue().toString();
+                                setPublicidad(imagen);
+                                break;
 
-                        default:
-                            Log.d("JRP_DEBUG","Algo ha salido mal a la hora de crear un numero aleatorio");
-                            break;
+                            default:
+                                Log.d("JRP_DEBUG","Algo ha salido mal a la hora de crear un numero aleatorio");
+                                break;
+                        }
                     }
+
                 }
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.e("Error: ", error.getMessage());
+                }
+            });
+        } else { // Si no hay conexión a internet...
+            mInternet = false;
+            Toast.makeText(this, "Asegúrate de tener conexión a internet", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
